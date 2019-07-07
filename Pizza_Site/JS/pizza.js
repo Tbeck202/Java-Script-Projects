@@ -72,9 +72,65 @@ function printInvoice(){
     var selectedItems="";
     for(var i=0; i<items.length; i++){
         if(items[i].type=='checkbox' && items[i].checked==true)
-            selectedItems+=items[i].value+"\n";{}
+        selectedItems+=items[i].value+" ";{}
     }
     document.getElementById('invVeggie').innerHTML = selectedItems;
 }
 /* End Update Order text */
 
+function totalCost(){
+    var items=document.getElementsByName('size');
+    var selectedItems="";
+    var sizeTotal=""
+    for(var i=0; i<items.length; i++){
+        if(items[i].checked==true)
+            selectedItems+=items[i].value+"";
+        if (selectedItems === "personal") {
+            sizeTotal = 6;
+        } else if (selectedItems === "medium") {
+            sizeTotal = 10;
+        } else if (selectedItems === "large") {
+            sizeTotal = 14;
+        } else if (selectedItems === "xl") {
+            sizeTotal = 16;
+        }
+    }
+    document.getElementById('costSize').innerHTML = sizeTotal;
+
+    var items=document.getElementsByName('crst');
+    var selectedCrust="";
+    var crustTotal=""
+    for(var i=0; i<items.length; i++){
+        if(items[i].checked==true)
+            selectedCrust+=items[i].value;
+        if (selectedCrust === "stuffed") {
+            crustTotal = 3;
+        } else if (selectedCrust === "plain") {
+            crustTotal = 0;
+        } else if (selectedCrust === "spicy") {
+            crustTotal = 0;
+        } else if (selectedCrust === "garlic") {
+            crustTotal = 0;
+        }
+        else if (selectedCrust === "house") {
+            crustTotal = 0;
+        }
+    }
+    document.getElementById('costCrust').innerHTML = crustTotal;
+
+    var items=document.getElementsByName('chz');
+    var selectedChz="";
+    var chzTotal=""
+    for(var i=0; i<items.length; i++){
+        if(items[i].checked==true)
+            selectedChz+=items[i].value;
+        if (selectedChz === "extra") {
+            chzTotal = 3;
+        } else if (selectedChz === "regular") {
+            chzTotal = 0;
+        } else if (selectedChz === "none") {
+            chzTotal = 0;
+        }
+    }
+    document.getElementById('chzTotal').innerHTML = chzTotal;
+}

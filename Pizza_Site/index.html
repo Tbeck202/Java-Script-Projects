@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-            <Button type="button" id="orderbtn" onclick="printInvoice()">Place Order</Button>
+            <Button type="button" id="orderbtn" onclick="printInvoice(),totalCost()">Place Order</Button>
 
         </form>
 
@@ -106,7 +106,7 @@
                 <tr>
                     <th>Crust: </th>
                     <td id="invCrst">x</td>
-                    <td class="tbltotal">No Extra Charge</td>
+                    <td class="tbltotal" id="costCrust">No Extra Charge</td>
                 </tr>
 
                 <tr>
@@ -118,7 +118,7 @@
                 <tr>
                     <th>Cheese: </th>
                     <td id="invChz">x</td>
-                    <td class="tbltotal">No Extra Charge</td>
+                    <td class="tbltotal" id="chzTotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
