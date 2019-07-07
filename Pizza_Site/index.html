@@ -20,13 +20,13 @@
 
     <div class="container">
         
-        <form action="" method="get">
+        <form action="" method="get" id="order">
             
                 <div id="size">
                     <h3>Size:</h3>
-                    Personal Pizza:<input type="radio" name="size" value="pers" class="size"><br>
-                    Medium Pizza:<input type="radio" name="size" value="med" class="size"><br>
-                    Large Pizza:<input type="radio" name="size" value="lg" class="size" checked><br>
+                    Personal Pizza:<input type="radio" name="size" value="personal" class="size"><br>
+                    Medium Pizza:<input type="radio" name="size" value="medium" class="size"><br>
+                    Large Pizza:<input type="radio" name="size" value="large" class="size" checked><br>
                     Extra Large Pizza:<input type="radio" name="size" value="xl" class="size"><br><br>
                 </div>
 
@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-            <Button type="button" id="orderbtn">Place Order</Button>
+            <Button type="button" id="orderbtn" onclick="printInvoice()">Place Order</Button>
 
         </form>
 
@@ -100,35 +100,41 @@
                 <tr>
                     <th>Size: </th>
                     <td id="invSz">x</td>
-                    <td class="tbltotal">cost</td>
+                    <td class="tbltotal" id="costSize">x</td>
                 </tr>
 
                 <tr>
                     <th>Crust: </th>
-                    <td>x</td>
-                    <td class="tbltotal">cost</td>
+                    <td id="invCrst">x</td>
+                    <td class="tbltotal">No Extra Charge</td>
+                </tr>
+
+                <tr>
+                    <th>Sauce: </th>
+                    <td id="invSauce">x</td>
+                    <td class="tbltotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
                     <th>Cheese: </th>
-                    <td>x</td>
-                    <td class="tbltotal">cost</td>
+                    <td id="invChz">x</td>
+                    <td class="tbltotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
                     <th>Meat(s): </th>
-                    <td>x</td>
-                    <td class="tbltotal">cost</td>
+                    <td id="invMeat">x</td>
+                    <td class="tbltotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
                     <th>Veggie(s): </th>
-                    <td>x</td>
-                    <td class="tbltotal">cost</td>
+                    <td id="invVeggie">x</td>
+                    <td class="tbltotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
-                    <th>Total: </th>
+                    <th>Total:</th>
                     <td></td>
                     <td class="tbltotal">Total cost</td>
                 </tr>

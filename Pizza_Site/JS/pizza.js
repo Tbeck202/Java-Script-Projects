@@ -26,13 +26,55 @@ function clickOutside(e){
 }
 // End Modal
 
-var runningTotal = 0;
-var sizeTotal = 0;
-var sizeArray = document.getElementsByClassName("size");
-
-for (var i = 0; i < sizeArray.length; i++) {
-    if (sizeArray[i].checked) {
-        var selectedSize = sizeArray[i].value;
+/* Update Order text */
+function printInvoice(){
+    var items=document.getElementsByName('size');
+    var selectedItems="";
+    for(var i=0; i<items.length; i++){
+        if(items[i].type=='radio' && items[i].checked==true)
+            selectedItems+=items[i].value+"\n";{}
     }
+    document.getElementById('invSz').innerHTML = selectedItems;
+
+    var items=document.getElementsByName('crst');
+    var selectedItems="";
+    for(var i=0; i<items.length; i++){
+        if(items[i].type=='radio' && items[i].checked==true)
+            selectedItems+=items[i].value+"\n";{}
+    }
+    document.getElementById('invCrst').innerHTML = selectedItems;
+
+    var items=document.getElementsByName('sauce');
+    var selectedItems="";
+    for(var i=0; i<items.length; i++){
+        if(items[i].type=='radio' && items[i].checked==true)
+            selectedItems+=items[i].value+"\n";{}
+    }
+    document.getElementById('invSauce').innerHTML = selectedItems;
+
+    var items=document.getElementsByName('chz');
+    var selectedItems="";
+    for(var i=0; i<items.length; i++){
+        if(items[i].type=='radio' && items[i].checked==true)
+            selectedItems+=items[i].value+"\n";{}
+    }
+    document.getElementById('invChz').innerHTML = selectedItems;
+
+    var items=document.getElementsByName('meat');
+    var selectedItems="";
+    for(var i=0; i<items.length; i++){
+        if(items[i].type=='checkbox' && items[i].checked==true)
+            selectedItems+=items[i].value+"\n";{}
+    }
+    document.getElementById('invMeat').innerHTML = selectedItems;
+
+    var items=document.getElementsByName('veg');
+    var selectedItems="";
+    for(var i=0; i<items.length; i++){
+        if(items[i].type=='checkbox' && items[i].checked==true)
+            selectedItems+=items[i].value+"\n";{}
+    }
+    document.getElementById('invVeggie').innerHTML = selectedItems;
 }
+/* End Update Order text */
 
