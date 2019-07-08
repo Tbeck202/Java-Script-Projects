@@ -182,7 +182,7 @@ function totalCost(){
 	} else {
 		vegTotal = 0;
     }
-    document.getElementById('vegTotal').innerHTML = vegTotal;
+    document.getElementById('vegTotal').innerHTML = "$" +vegTotal;
 
     var orderTotal = (sizeTotal + crustTotal + sauceTotal + chzTotal + meatTotal + vegTotal)
         document.getElementById("totalPrice").innerHTML = "$" +orderTotal;
