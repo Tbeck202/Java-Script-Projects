@@ -70,18 +70,18 @@
 
                     <div id="veg">
                         <h4>Veggies</h4>
-                        Tomato:<input type="checkbox" name="veg" value="tom" class="vg">
+                        Tomato:<input type="checkbox" name="veg" value="tomato" class="vg">
                         Onion:<input type="checkbox" name="veg" value="onion" class="vg">
-                        Black Olive:<input type="checkbox" name="veg" value="blkOlv" class="vg">
-                        Green Pepper:<input type="checkbox" name="veg" value="grnPep" class="vg"><br>
-                        Mushrooms:<input type="checkbox" name="veg" value="msh" class="vg">
-                        Pineapple:<input type="checkbox" name="veg" value="pine" class="vg">
-                        Spinach:<input type="checkbox" name="veg" value="spnch" class="vg">
-                        Jalapeno:<input type="checkbox" name="veg" value="jal" class="vg">
+                        Black Olive:<input type="checkbox" name="veg" value="blackOlive" class="vg">
+                        Green Pepper:<input type="checkbox" name="veg" value="greenPepper" class="vg"><br>
+                        Mushrooms:<input type="checkbox" name="veg" value="mushroom" class="vg">
+                        Pineapple:<input type="checkbox" name="veg" value="pineapple" class="vg">
+                        Spinach:<input type="checkbox" name="veg" value="spinach" class="vg">
+                        Jalapeno:<input type="checkbox" name="veg" value="jalapeno" class="vg">
                     </div>
                 </div>
 
-            <Button type="button" id="orderbtn" onclick="printInvoice(),totalCost()">Place Order</Button>
+            <Button type="button" id="orderbtn" onclick="printInvoice(),totalCost()">Add Total</Button>
 
         </form>
 
@@ -112,7 +112,7 @@
                 <tr>
                     <th>Sauce: </th>
                     <td id="invSauce">x</td>
-                    <td class="tbltotal">No Extra Charge</td>
+                    <td class="tbltotal" id="costSauce">No Extra Charge</td>
                 </tr>
 
                 <tr>
@@ -124,22 +124,27 @@
                 <tr>
                     <th>Meat(s): </th>
                     <td id="invMeat">x</td>
-                    <td class="tbltotal">No Extra Charge</td>
+                    <td class="tbltotal" id="meatTotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
                     <th>Veggie(s): </th>
                     <td id="invVeggie">x</td>
-                    <td class="tbltotal">No Extra Charge</td>
+                    <td class="tbltotal" id="vegTotal">No Extra Charge</td>
                 </tr>
 
                 <tr>
                     <th>Total:</th>
                     <td></td>
-                    <td class="tbltotal">Total cost</td>
+                    <td class="tbltotal" id="totalPrice">Total cost</td>
                 </tr>
 
             </table>
+
+            <div class="orderCancelBtns">
+                <button type="submit" class="invoiceBtn" onclick="closeModal()">Place Order</button>
+                <Button type="button" class="invoiceBtn" onclick="closeModal()">Cancel/make changes</Button>
+            </div>
             
         </div>
 

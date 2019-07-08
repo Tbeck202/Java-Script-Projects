@@ -95,7 +95,7 @@ function totalCost(){
             sizeTotal = 16;
         }
     }
-    document.getElementById('costSize').innerHTML = sizeTotal;
+    document.getElementById('costSize').innerHTML = "$" +sizeTotal;
 
     var items=document.getElementsByName('crst');
     var selectedCrust="";
@@ -116,7 +116,25 @@ function totalCost(){
             crustTotal = 0;
         }
     }
-    document.getElementById('costCrust').innerHTML = crustTotal;
+    document.getElementById('costCrust').innerHTML = "$" +crustTotal;
+
+    var items=document.getElementsByName('sauce');
+    var selectedSauce="";
+    var sauceTotal=""
+    for(var i=0; i<items.length; i++){
+        if(items[i].checked==true)
+            selectedSauce+=items[i].value;
+        if (selectedSauce === "marinara") {
+            sauceTotal = 0;
+        } else if (selectedSauce === "white") {
+            sauceTotal = 0;
+        } else if (selectedSauce === "bbq") {
+            sauceTotal = 0;
+        } else if (selectedSauce === "none") {
+            sauceTotal = 0;
+        }
+    }
+    document.getElementById('costSauce').innerHTML = "$" +sauceTotal;
 
     var items=document.getElementsByName('chz');
     var selectedChz="";
@@ -132,5 +150,45 @@ function totalCost(){
             chzTotal = 0;
         }
     }
-    document.getElementById('chzTotal').innerHTML = chzTotal;
+    document.getElementById('chzTotal').innerHTML = "$" +chzTotal;
+
+    var meatTotal = 0;
+	var selectedMeat = [];
+	var meatArray = document.getElementsByName("meat");
+	for (var j = 0; j < meatArray.length; j++) {
+		if (meatArray[j].checked) {
+			selectedMeat.push(meatArray[j].value);
+		}
+	}
+	var meatCount = selectedMeat.length;
+	if (meatCount > 1) {
+		meatTotal = (meatCount - 1);
+	} else {
+		meatTotal = 0;
+    }
+    document.getElementById('meatTotal').innerHTML = "$" +meatTotal;
+
+    var vegTotal = 0;
+	var selectedVeggie = [];
+	var vegArray = document.getElementsByName("veg");
+	for (var j = 0; j < vegArray.length; j++) {
+		if (vegArray[j].checked) {
+			selectedVeggie.push(vegArray[j].value);
+		}
+	}
+	var meatCount = selectedVeggie.length;
+	if (meatCount > 1) {
+		vegTotal = (meatCount - 1);
+	} else {
+		vegTotal = 0;
+    }
+    document.getElementById('vegTotal').innerHTML = vegTotal;
+
+    var orderTotal = (sizeTotal + crustTotal + sauceTotal + chzTotal + meatTotal + vegTotal)
+        document.getElementById("totalPrice").innerHTML = "$" +orderTotal;
+    
 }
+
+
+
+
